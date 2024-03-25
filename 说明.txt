@@ -1,17 +1,6 @@
-环境  Python 3.7
-
-启动命令：
-python manage.py runserver
-
-浏览器打开网页
 http://127.0.0.1:8000/index
-http://127.0.0.1:8000/login
-账号root    密码root
 账号admin   密码admin
 
-
-后台管理
-http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/admin_html
 后台账号admins 密码admins
 
