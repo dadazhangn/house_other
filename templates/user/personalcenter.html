@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>房屋数据分析推荐系统</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/fonts/font.css">
+    <link rel="stylesheet" href="../../static/css/personalcenter.css" />
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon" />
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=3.0&ak=FLf5ptGOGyaoR22zVAOmTdOvxCjUhkGS"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper">
+        <header>
+            <div class="left">
+                <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统" />
+                <span>房屋数据分析推荐系统</span>
+            </div>
+            <div class="right">
+                <span class="head-login">登录</span>
+                <span class="head-register">注册</span>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <dl>
+
+                    <dd data-id="data-counter">数据可视化</dd>
+                    <dd data-id="data-query" class="query_nav_box">
+                        楼盘房屋数据
+                        <div class="query_nav_container">
+                            <span data-id="query_simple">楼盘房屋数据</span>
+<!--                            <span data-id="query_condition">条件查询</span>-->
+<!--                            <span data-id="query_public">公共设施查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-analysis" class="analysis_nav_box">
+                        区位资源
+                        <div class="analysis_nav_container">
+                            <span data-id="analysis-resources">区位资源分析</span>
+<!--                            <span data-id="analysis-recommendation">区位资源查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-compare">房源对比</dd>
+                    <dd data-id="data-tuijian">房源推荐</dd>
+                    <dd data-id="data-user" class="active">个人信息&后台管理</dd>
+                </dl>
+            </nav>
+
+            <div class="content">
+                <div class="person-box">
+                    <div class="person-left">
+                        <div class="left-header">
+                            <div class="left-img-box">
+                                <img src="../../static/picture.png">
+                            </div>
+                            <div>昵称：<span class="nickname"></span></div>
+                            <div>地址：<span class="address"></span></div>
+                            <div>个性签名：<span class="signature">这个人很懒，什么都没有留下</span></div>
+                        </div>
+                        <div class="left-center">
+                            <p>标签</p>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="left-footer">
+                            <p>详细信息</p>
+                            <ul>
+                                <li><span>昵称</span>：<span class="nickname"></span></li>
+                                <li><span>年龄</span>：<span class="age"></span></li>
+                                <li><span>资金</span>：<span class="fund"></span></li>
+                                <li><span>手机号</span>：<span class="tel"></span></li>
+                                <li><span>注册时间</span>：<span class="login-data"></span></li>
+                                <li><span>教育程度</span>：<span class="edu-bg"></span></li>
+                                <li><span>用户类型</span>：<span class="user-type"></span></li>
+                            </ul>
+                            <button type="button"  class="btn-change-pwd">修改密码</button>
+                            <button type="button"  class="btn-change-info">更改基本信息</button>
+                        </div>
+
+
+                        <dl> <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">后台数据管理</a></dl>
+                        <dl> <a href="http://127.0.0.1:8000/login">退出登录</a></dl>
+
+
+
+                    </div>
+                    <div class="person-right">
+                        <div class="right-history">
+                            <p>我的历史推荐</p>
+                            <div class="table">
+                                <div class="table-head">
+                                    <span>序号</span>
+                                    <span>小区图片</span>
+                                    <span>小区名称</span>
+                                    <span>参考价格</span>
+                                    <span>楼层类型</span>
+                                    <span>绿化率/%</span>
+                                    <span>地址</span>
+                                    <span>操作</span>
+                                </div>
+                                <ul class="history-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-comment">
+                            <p>我的评论</p>
+                            <div class="table">
+                                <div class="table-head">
+                                    <span>ID</span>
+                                    <span>小区名称</span>
+                                    <span>评论内容</span>
+                                    <span>分数</span>
+                                    <span>评论时间</span>
+                                    <span>操作</span>
+                                </div>
+                                <ul class="comment-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="model">
+                        <div class="model-box">
+                            <span id="btn-model-close" class="iconfont icon-close btn-model-close"></span>
+                            <div id="model-content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="http://api.map.baidu.com/api?type=webgl&v=3.0&ak=lDpuaDnGKnxCl7QuVloZGy6GfCqPWRwy"></script>
+    <script src="../../static/js/personalcenter.js"></script>
+</body>
+
+</html>

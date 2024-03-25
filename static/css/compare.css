@@ -1,0 +1,130 @@
+.query_nav_container {
+    display: none;
+}
+
+.analysis_nav_container {
+    display: none;
+}
+
+.compare-box {
+    width: 98%;
+    height: 97%;
+    margin: 1% auto;
+    border: 1px solid #cacaca;
+    border-radius: 10px;
+    overflow: hidden;
+    /* background-color: #008c8c; */
+}
+
+.compare-head {
+    width: 100%;
+    height: 10%;
+    /* background-color: #0f0; */
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    justify-content: left;
+}
+
+.compare-head input {
+    width: 200px;
+    height: 50%;
+    align-self: center;
+    margin: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.compare-head button {
+    padding: 5px 10px;
+    background-color: #4e6ef2;
+    border: none;
+    color: #fff;
+    align-self: center;
+    border-radius: 5px;
+    outline: none;
+    user-select: none;
+    margin: 10px;
+}
+
+.compare-head button:active {
+    background-color: #4662D9;
+}
+
+.compare-content {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    font-weight: 400;
+    color: rgba(0, 0, 0);
+    background-color:#99a2c8;
+}
+
+.compare-content .active {
+    color: #c53d43;
+}
+
+.table-head {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.table-head>span {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+}
+
+.table-head>span:first-of-type {
+    height: 200px;
+}
+ul.compare-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    background-color: #fff;
+    background-image:url('../../static/bg3.jpg');
+}
+
+ul.compare-list li {
+    min-width: 300px;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+ul.compare-list li img {
+    width: 170px;
+    height: 150px;
+}
+
+ul.compare-list li>div:first-of-type {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.compare-list li>div {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ccc;
+}

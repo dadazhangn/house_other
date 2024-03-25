@@ -1,0 +1,198 @@
+.query_nav_container{
+    display: none;
+}
+.analysis_nav_container{
+    display: none;
+}
+
+
+/* content */
+section>.content {
+    overflow: hidden;
+    background-color: #eee;
+    height: 100%;
+}
+/* 数据台账 */
+
+section .content #data-counter {
+    width: 100%;
+    height: 100%;
+    /*margin: 50px auto;*/
+    display: block;
+    background-color: #ccc;
+}
+
+#data-counter .content {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    padding-bottom: 20px;
+}
+
+#data-counter .content>div {
+    width: 49%;
+    height: 48%;
+    /* border:1px solid #000; */
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 2px 4px 10px #4c4c4c;
+}
+
+/* 3. 查询统计 */
+
+section .content #query-list {
+    display: none;
+    overflow: hidden;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+table thead {
+    background-color: #b3bcc5;
+}
+
+table tbody {
+    background-color: #fff;
+}
+
+table tr {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+table .btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+table .btn.btn-detail {
+    background-color: #5cb85c;
+}
+
+/* 弹框 */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: #f40;
+    border-radius: 50%;
+    color: #fff;
+    transform: translate(40%, -40%);
+    cursor: pointer;
+}
+
+.modal .modal-content {
+    width: 60%;
+    height: 450px;
+    background-color: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal .modal-content .modal-container {
+    height: 100%;
+    background-color: #ECECEC;
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+}
+
+.modal-content {
+    padding: 30px;
+}
+
+.modal-content form {
+    width: 400px;
+    margin: 40px auto 0;
+}
+
+.modal-content form div:nth-of-type(3) input {
+    background-color: #eee;
+    border: 2px solid #ccc;
+}
+
+.modal-content form div:last-child {
+    text-align: center;
+    margin: 0;
+}
+
+.pager {
+    text-align: center;
+}
+
+.pager button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* 查询学生 */
+
+.find-student-top {
+    height: 40px;
+    vertical-align: middle;
+    background-color: rgb(63, 54, 54);
+    line-height: 40px;
+}
+
+.find-student-top div {
+    float: right;
+    margin-right: 70px;
+}
+
+.find-student-top select {
+    padding: 5px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.find-student-top span {
+    margin-left: 40px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.find-student-top input {
+    width: 318px;
+}
+
+.find-student-top button {
+    padding: 5px 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.find-student-top img {
+    width: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}

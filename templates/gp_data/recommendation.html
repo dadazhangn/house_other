@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>房屋数据分析推荐系统</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/fonts/font.css">
+    <link rel="stylesheet" href="../../static/css/recommendation.css"/>
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon"/>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=3.0&ak=FLf5ptGOGyaoR22zVAOmTdOvxCjUhkGS"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+<div class="warpper">
+    <header>
+        <div class="left">
+            <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统"/>
+            <span>房屋数据分析推荐系统</span>
+        </div>
+        <div class="right">
+            <span class="head-login">登录</span>
+            <span class="head-register">注册</span>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <dl>
+
+                <dd data-id="data-counter">数据可视化</dd>
+                <dd data-id="data-query" class="query_nav_box">
+                    楼盘房屋数据
+                        <div class="query_nav_container">
+                            <span data-id="query_simple">楼盘房屋数据</span>
+<!--                        <span data-id="query_condition">条件查询</span>-->
+<!--                        <span data-id="query_public">公共设施查询</span>-->
+                    </div>
+                </dd>
+                <dd data-id="data-analysis" class="analysis_nav_box active">
+                    区位资源
+                    <div class="analysis_nav_container">
+                        <span data-id="analysis-resources">区位资源分析</span>
+<!--                        <span data-id="analysis-recommendation" class="analysis_active">区位资源查询</span>-->
+                    </div>
+                </dd>
+                <dd data-id="data-compare">房源对比</dd>
+                <dd data-id="data-tuijian">房源推荐</dd>
+                <dd data-id="data-user">个人信息&后台管理</dd>
+            </dl>
+        </nav>
+
+        <div class="content">
+            <div class="recommendation">
+                <form>
+                    <div class="recommend-top">
+                        <div class="recommend-title">小区特征</div>
+                        <div class="top-content">
+                            <div>
+                                <span>楼层</span>
+                                <span>：</span>
+                                <div>
+                                    <label for="louceng-1"><input type="checkbox" value="低层" name="louceng"
+                                                                  id="louceng-1">低层</label>
+                                    <label for="louceng-2"><input type="checkbox" value="多层" name="louceng"
+                                                                  id="louceng-2">多层</label>
+                                    <label for="louceng-3"><input type="checkbox" value="小高层" name="louceng"
+                                                                  id="louceng-3">小高层</label>
+                                    <label for="louceng-4"><input type="checkbox" value="高层" name="louceng"
+                                                                  id="louceng-4">高层</label>
+                                    <label for="louceng-5"><input type="checkbox" value="超高层" name="louceng"
+                                                                  id="louceng-5">超高层</label>
+                                </div>
+                            </div>
+                            <div>
+                                <span>绿化率</span>
+                                <span>：</span>
+                                <div>
+                                    <label for="lvhuan-1"><input type="checkbox" value="0~25%" name="lvhua"
+                                                                 id="lvhuan-1">0~25%</label>
+                                    <label for="lvhuan-2"><input type="checkbox" value="25%~50%" name="lvhua"
+                                                                 id="lvhuan-2">25%~50%</label>
+                                    <label for="lvhuan-3"><input type="checkbox" value="50%~75%" name="lvhua"
+                                                                 id="lvhuan-3">50%~75%</label>
+                                    <label for="lvhuan-4"><input type="checkbox" value="75%~100%" name="lvhua"
+                                                                 id="lvhuan-4">75%~100%</label>
+                                </div>
+                            </div>
+                            <div>
+                                <span>朝向</span>
+                                <span>：</span>
+                                <div>
+                                    <label for="chaoxiang-1"><input type="checkbox" value="东" name="chaoxiang"
+                                                                    id="chaoxiang-1">朝东<label>
+                                        <label for="chaoxiang-2"><input type="checkbox" value="南" name="chaoxiang"
+                                                                        id="chaoxiang-2">朝南<label>
+                                            <label for="chaoxiang-3"><input type="checkbox" value="西" name="chaoxiang"
+                                                                            id="chaoxiang-3">朝西<label>
+                                                <label for="chaoxiang-4"><input type="checkbox" value="北"
+                                                                                name="chaoxiang"
+                                                                                id="chaoxiang-4">朝北<label>
+                                </div>
+                            </div>
+                            <div>
+                                <span>装修</span>
+                                <span>：</span>
+                                <div>
+                                    <label for="zhuangxiu-1"><input type="checkbox" value="精装修" name="zhuangxiu"
+                                                                    id="zhuangxiu-1">精装修<label>
+                                        <label for="zhuangxiu-2"><input type="checkbox" value="普通装修" name="zhuangxiu"
+                                                                        id="zhuangxiu-2">普通装修<label>
+                                            <label for="zhuangxiu-3"><input type="checkbox" value="毛坯房" name="zhuangxiu"
+                                                                            id="zhuangxiu-3">毛坯房<label>
+                                </div>
+                            </div>
+                            <div>
+                                <span>区域选择</span>
+                                <span>：</span>
+                                <select id="region" name="region">
+                                    <option value="ganjinzi">甘井子</option>
+                                    <option value="zhongshan">中山</option>
+                                    <option value="shakekou">沙河口</option>
+                                    <option value="xigang">西岗</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span>区域资源</span>
+                                <span>：</span>
+                                <div>
+                                    <select id="region-type" name="region-type">
+                                        <option value="xuexiao">学校</option>
+                                        <option value="yiyuan">医院</option>
+                                        <option value="shangchang">商场</option>
+                                    </select>
+                                    <select id="select-resource" name="region-resource">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-bottom">
+                        <div class="recommend-title">周边设施</div>
+                        <div class="bottom-content">
+                            <div>
+                                <div>
+                                    <span>教育</span>
+                                    <span>：</span>
+                                    <input type="range" step="20" value="0" name="jiaoyu-range" value="0" min="0"
+                                           max="100">
+                                    <span class="range-num">0%</span>
+                                </div>
+                                <div>
+                                    <label for="jiaoyu-1"><input type="checkbox" value="youeryuan_num" name="jiaoyu"
+                                                                 id="jiaoyu-1">幼儿园<label>
+                                        <label for="jiaoyu-2"><input type="checkbox" value="xiaoxue_num" name="jiaoyu"
+                                                                     id="jiaoyu-2">小学<label>
+                                            <label for="jiaoyu-3"><input type="checkbox" value="zhongxue_num" name="jiaoyu"
+                                                                         id="jiaoyu-3">中学<label>
+                                                <label for="jiaoyu-4"><input type="checkbox" value="daxue_num" name="jiaoyu"
+                                                                             id="jiaoyu-4">大学<label>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>医疗</span>
+                                    <span>：</span>
+                                    <input type="range" step="20" value="0" name="yiliao-range" value="0" min="0"
+                                           max="100">
+                                    <span class="range-num">0%</span>
+                                </div>
+                                <div>
+                                    <label for="yiliao-1"><input type="checkbox" value="sanjiayiyuan_num" name="yiliao"
+                                                                 id="yiliao-1">三甲医院<label>
+                                        <label for="yiliao-2"><input type="checkbox" value="yijiyiliao" name="yiliao"
+                                                                     id="yiliao-2">一级医疗设施<label>
+                                            <label for="yiliao-3"><input type="checkbox" value="erjiyiliao" name="yiliao"
+                                                                         id="yiliao-3">二级医疗设施<label>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>交通</span>
+                                    <span>：</span>
+                                    <input type="range" step="20" value="0" name="jiaotong-range" value="0" min="0"
+                                           max="100">
+                                    <span class="range-num">0%</span>
+                                </div>
+                                <div>
+                                    <label for="jiaotong-1"><input type="checkbox" value="huochezhan_num" name="jiaotong"
+                                                                   id="jiaotong-1">火车站<label>
+                                        <label for="jiaotong-2"><input type="checkbox" value="qichezhan_num" name="jiaotong"
+                                                                       id="jiaotong-2">汽车站<label>
+                                            <label for="jiaotong-3"><input type="checkbox" value="gaotiezhan_num" name="jiaotong"
+                                                                           id="jiaotong-3">高铁站<label>
+                                                <label for="jiaotong-4"><input type="checkbox" value="gongjiaozhan_num"
+                                                                               name="jiaotong"
+                                                                               id="jiaotong-4">公交站<label>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>休闲娱乐</span>
+                                    <span>：</span>
+                                    <input type="range" step="20" value="0" name="yule-range" value="0" min="0"
+                                           max="100">
+                                    <span class="range-num">0%</span>
+                                </div>
+                                <div>
+                                    <label for="yule-1"><input type="checkbox" value="shichang_num" name="yule"
+                                                               id="yule-1">市场<label>
+                                        <label for="yule-2"><input type="checkbox" value="shangchangchaoshi_num" name="yule" id="yule-2">商场超市<label>
+                                            <label for="yule-3"><input type="checkbox" value="canyin_num" name="yule"
+                                                                       id="yule-3">餐饮<label>
+                                                <label for="yule-4"><input type="checkbox" value="gongyuan_num" name="yule"
+                                                                           id="yule-4">公园<label>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit">确认</button>
+                                <button type="reset">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="model">
+                <div class="model-box">
+                    <span id="btn-model-close" class="iconfont icon-close btn-model-close"></span>
+                    <div id="model-content">
+                        <table border="1px solid #ececec" cellspacing="0" cellpadding="0">
+                            <thead>
+                            <tr>
+                                <th>小区图片</th>
+                                <th>小区名称</th>
+                                <th>地址</th>
+                                <th>价格</th>
+                                <th>详情</th>
+                                <th>是否在售</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="model-list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="../../static/js/recommendation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+.query_nav_container {
+    display: none;
+}
+
+.analysis_nav_container {
+    display: flex;
+}
+
+section nav dd:nth-of-type(4) {
+    margin-top: 93px;
+}
+
+section>.content{
+    position: relative;
+}
+
+/*  */
+.recommendation {
+    width: 98%;
+    height: 97%;
+    margin-left: 1%;
+    margin-top: 1%;
+    /* border: 1px solid #fcfcfc; */
+    /* border-radius: 10px;
+    overflow: hidden; */
+}
+
+.recommendation form {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    /* background-color: pink; */
+}
+
+.recommendation .recommend-top,
+.recommendation .recommend-bottom{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+} 
+
+.recommendation .recommend-top {
+    width: 100%;
+    height: 40%;
+    /* background-color: #0ff; */
+    
+}
+
+.recommendation .recommend-bottom {
+    width: 100%;
+    height: 60%;
+    /* background-color: #ff0; */
+}
+
+.recommendation .recommend-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+    background-color: #ccc;
+}
+
+.top-content, .bottom-content {
+    width: 100%;
+    height: calc(100% - 40px);
+    padding: 20px 40px;
+}
+
+/* 小区特征 */
+.top-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.top-content>div {
+    width: 45%;
+    height: 15%;
+    white-space: nowrap;
+    display: flex;
+    
+}
+
+
+.top-content>div>span:first-of-type {
+    width: 17%;
+    white-space: nowrap;
+    text-align: justify;
+    text-align-last: justify;
+    /* background-color: red; */
+}
+.top-content>div>* {
+    align-self: center;
+}
+.top-content>div>div{
+    margin-left: 10px;
+}
+
+.top-content>div select {
+    padding: 5px 10px;
+    outline: none;
+    /* border: none; */
+}
+
+.top-content label:not(:nth-of-type(1)) {
+    margin-left: 10px;
+}
+.top-content label input{
+    margin-right: 5px;
+}
+
+
+
+/* 周边设施 */
+.bottom-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    /* background-color: #0ff; */
+}
+.bottom-content>div {
+    width: 95%;
+    height: 15%;
+    align-self: center;
+    display: flex;
+    background-color: #fff;
+}
+.bottom-content>div>*{
+    align-self: center;
+}
+.bottom-content>div>div:first-of-type{
+    width: 50%;
+    /* background-color: #fe3c2e; */
+    display: flex;
+    
+}
+.bottom-content>div>div:first-of-type>span:first-of-type{
+    width: 13%;
+    
+    text-align: justify;
+    text-align-last: justify;
+}
+.bottom-content .range-num{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.bottom-content label{
+    margin-left: 10px;
+}
+.bottom-content label input{
+    margin-right: 5px;
+}
+input[type="range"] {
+    padding: 0;
+    width: 80%;
+}
+
+.bottom-content>div:last-of-type{
+    justify-content: center;
+}
+.bottom-content>div:last-of-type button{
+    padding: 5px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #2ca9e1;
+    border: 1px solid #ccc;
+    color:#fff;
+    outline: none;
+}
+
+
+
+/* model */
+#model {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.model-box {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#model span.icon-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+    padding: 10px;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#model-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    /*background-color: #0f0;*/
+}
+
+
+
+table {
+    width: 99%;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+table thead {
+    background-color: #fff;
+}
+
+table thead th {
+    font-weight: 500;
+}
+
+table tbody {
+    background-color: #fff;
+}
+
+table tr {
+    height: 30px;
+    line-height: 30px;
+}
+
+table .btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+table .btn{
+    background-color: #5cb85c;
+}
+
+tbody.model-list th {
+    width: 200px;
+    height: 100px;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #7c7c7c;
+}
+
+tbody.model-list th>div {
+    width: 200px;
+    height: 100px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+tbody.model-list th>img {
+    width: 70%;
+    height: 80%;
+}

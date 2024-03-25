@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/register.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <title>用户注册</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="content">
+        <form method="post">
+            {% csrf_token %}
+            <div><label for="nickname"><input name="nickname" id="nickname" type="text" placeholder="昵称"></label>
+            </div>
+            <div><label for="pwd1"><input name="pwd1" id="pwd1" type="password" placeholder="密码"></label></div>
+            <div><label for="pwd2"><input name="pwd2" id="pwd2" type="password" placeholder="确认密码"></label>
+            </div>
+            <div><label for="tel"><input name="tel" id="tel" type="text" placeholder="手机号"></label></div>
+            <div class="age">
+                <label for="age-min"><input name="age-min" id="age-min" type="text" placeholder="最小年龄"></label>
+                <label for="age-max"><input name="age-max" id="age-max" type="text" placeholder="最大年龄"></label>
+            </div>
+            <div>
+                <select name="education">
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                    <option value="大学">大学</option>
+                    <option value="硕士">硕士</option>
+                    <option value="博士">博士</option>
+                </select>
+            </div>
+            <div class="salary">
+                <label for="salary-min"><input name="salary-min" id="salary-min" type="text" placeholder="最小存款"></label>
+                <label for="salary-max"><input name="salary-max" id="salary-max" type="text" placeholder="最大存款"></label>
+            </div>
+            <div class="oneself-tag">
+                <label for="有房"><input type="checkbox" value="有房" name="label" id="有房">有房</label>
+                <label for="有车"><input type="checkbox" value="有车" name="label" id="有车">有车</label>
+                <label for="有存款"><input type="checkbox" value="有存款" name="label" id="有存款">有存款</label>
+                <label for="已婚"><input type="checkbox" value="已婚" name="label" id="已婚">已婚</label>
+            </div>
+            <div>
+                <button>确认注册</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../static/js/register.js"></script>
+</body>
+
+</html>

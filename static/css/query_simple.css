@@ -1,0 +1,173 @@
+.query_nav_container {
+    display: flex;
+}
+.analysis_nav_container{
+    display: none;
+}
+section nav dd:nth-of-type(3){
+    margin-top: 133px;
+}
+
+
+/* 3. 查询统计 */
+
+/* content */
+
+section .query_list #query_simple {
+    display: block;
+    background-color: #0f0;
+    overflow: hidden;
+    height: 100%;
+}
+
+#query_simple {
+    width: 100%;
+    height: 100%;
+}
+
+/* 小区列表 */
+
+table {
+    width: 99%;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+table thead {
+    background-color: #fff;
+}
+
+table thead th {
+    font-weight: 500;
+}
+
+table tbody {
+    background-color: #fff;
+}
+
+table tr {
+    height: 30px;
+    line-height: 30px;
+}
+
+table .btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+table .btn{
+    background-color: #5cb85c;
+}
+
+tbody.simple-list th {
+    width: 200px;
+    height: 100px;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #7c7c7c;
+}
+
+tbody.simple-list th>div {
+    width: 200px;
+    height: 100px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+tbody.simple-list th>img {
+    width: 70%;
+    height: 80%;
+}
+
+/* 简单查询-小区 */
+
+.find-top {
+    height: 50px;
+    vertical-align: middle;
+    background-color: rgb(63, 54, 54);
+    line-height: 50px;
+}
+
+.find-top div {
+    float: right;
+    margin-right: 70px;
+}
+
+.find-top select {
+    padding: 5px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.find-top span {
+    margin-left: 40px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.find-top input {
+    width: 318px;
+    padding: 12px 6px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.find-top button {
+    padding: 5px 30px;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #0095d9;
+    outline: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.find-top img {
+    width: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* 翻页 */
+
+.pager {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color:aqua; */
+    /* margin-top: 40px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pager>ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.pager>ul li.active {
+    background-color: #0095d9;
+    color: #fff;
+}
+
+.pager>span, .pager li {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    user-select: none;
+}
+
+.pager span:hover, .pager li:hover {
+    background-color: #b3bcc5;
+    color: #fff;
+}

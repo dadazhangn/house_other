@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>房屋数据分析推荐系统</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/fonts/font.css" />
+    <link rel="stylesheet" href="../../static/css/query_condition.css" />
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon" />
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=3.0&ak=FLf5ptGOGyaoR22zVAOmTdOvxCjUhkGS"></script>
+{#    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>#}
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper">
+        <header>
+            <div class="left">
+                <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统" />
+                <span>房屋数据分析推荐系统</span>
+            </div>
+            <div class="right">
+                <span class="head-login">登录</span>
+                <span class="head-register">注册</span>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <dl>
+
+                    <dd data-id="data-counter">数据可视化</dd>
+                    <dd data-id="data-query" class="query_nav_box active">
+                        楼盘房屋数据
+                        <div class="query_nav_container">
+                            <span data-id="query_simple">楼盘房屋数据</span>
+<!--                            <span data-id="query_condition" class="query_active">条件查询</span>-->
+<!--                            <span data-id="query_public">公共设施查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-analysis" class="analysis_nav_box">
+                        区位资源
+                        <div class="analysis_nav_container">
+                            <span data-id="analysis-resources">区位资源分析</span>
+<!--                            <span data-id="analysis-recommendation">区位资源查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-compare">房源对比</dd>
+                    <dd data-id="data-tuijian">房源推荐</dd>
+                    <dd data-id="data-user">个人信息&后台管理</dd>
+                </dl>
+            </nav>
+
+            <div class="content">
+                <!-- 3. 查询统计-条件查询 -->
+                <div class="query_condition_box">
+                    <div class="query-tool-btn">
+                        <span class="iconfont icon-xuanxiang"></span>
+                        <span>条件筛选</span>
+                    </div>
+                    <div class="query-tool-content">
+                        <div class="query-tool-head">
+                            <span class="iconfont icon-xuanxiang"></span>
+                            <span>条件选房</span>
+                            <span class="iconfont icon-close-condition btn-close"></span>
+                        </div>
+                        <ul>
+                            <li>
+                                <label>行政划分</label>
+                                <select id="region">
+                                    <option value="0">中山</option>
+                                    <option value="1">沙河口</option>
+                                    <option value="2">甘井子</option>
+                                    <option value="3">西岗</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>房源类型</label>
+                                <select id="house-type">
+                                    <option value="住宅">住宅</option>
+                                    <option value="商住">商住</option>
+                                </select>
+                            </li>
+                            <li>
+                                <span>价格</span>
+                                <input id="price-min" value="0" type="text" onkeyup="value=value.replace(/[^\d]/g,'')">
+                                <span>至</span>
+                                <input id="price-max" value="100000" type="text"
+                                    onkeyup="value=value.replace(/[^\d]/g,'')">
+                                <span>元</span>
+                            </li>
+                            <li>
+                                <span>面积</span>
+                                <input id="area-min" value="0" type="text" onkeyup="value=value.replace(/[^\d]/g,'')">
+                                <span>至</span>
+                                <input id="area-max" value="500000" type="text"
+                                    onkeyup="value=value.replace(/[^\d]/g,'')">
+                                <span>㎡</span>
+                            </li>
+                            <li>
+                                <button class="btn btn-find">查询</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="query-condition-list" class="query-condition-list">
+                        <div class="condition-num">搜索结果：0</div>
+                        <ul>
+                            <!-- <li>
+                                <span>
+                                    <i class="iconfont icon-biaoji"></i>
+                                    <span>1.文景苑</span>
+                                </span>
+                                <span>
+                                    地址：陕西省宝鸡市岐山县文景苑
+                                </span>
+                                <span>
+                                    查看小区详情
+                                    <i class="iconfont icon-xiangqing"></i>
+                                </span>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div id="condition-map" class="condition-map"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="../../static/js/query_condition.js"></script>
+</body>
+
+</html>

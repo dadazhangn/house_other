@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>房屋数据分析推荐系统</title>
+    <link rel="stylesheet" href="../../static/fonts/font.css">
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/houseinfo.css"/>
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon"/>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=3.0&ak=z9xc2hrpsDDMnPvp81826Xfuv17KcaBy"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+<div class="warpper">
+    <header>
+        <div class="left">
+            <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统"/>
+            <span>房屋数据分析推荐系统</span>
+        </div>
+        <div class="right">
+            <span class="head-login">登录</span>
+            <span class="head-register">注册</span>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <dl>
+
+                <dd data-id="data-counter">数据可视化</dd>
+                <dd data-id="data-query" class="query_nav_box">
+                    楼盘房屋数据
+                    <div class="query_nav_container">
+                        <span data-id="query_simple">楼盘房屋数据</span>
+<!--                        <span data-id="query_condition">条件查询</span>-->
+<!--                        <span data-id="query_public">公共设施查询</span>-->
+                    </div>
+                </dd>
+                <dd data-id="data-analysis" class="analysis_nav_box">
+                    区位资源
+                    <div class="analysis_nav_container">
+                        <span data-id="analysis-resources">区位资源分析</span>
+<!--                        <span data-id="analysis-recommendation">区位资源查询</span>-->
+                    </div>
+                </dd>
+                <dd data-id="data-compare">房源对比</dd>
+                <dd data-id="data-tuijian">房源推荐</dd>
+                <dd data-id="data-user">个人信息&后台管理</dd>
+            </dl>
+        </nav>
+
+        <div class="content">
+            <div class="detail-box">
+                <div class="detail-head">
+                    <span data-nav="base" class="active">基本详情</span>
+<!--                    <span data-nav="facility">周边设施</span>-->
+                </div>
+                <div class="detail-content">
+                    <div class="base-detail">
+                        <div class="house-home">
+
+                        </div>
+                        <div class="house-type">
+
+                        </div>
+                        <div class="house-info">
+
+                        </div>
+                        <div class="house-comment">
+                            <p>
+                                <span>楼盘评论</span>
+                                <button id="btn-comment">写评论</button>
+                            </p>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="facility-box">
+                        <ul class="facility-nav">
+                            <li data-name="公交" class="active">公交</li>
+                            <li data-name="车站">车站</li>
+                            <li data-name="医院">医院</li>
+                            <li data-name="学校">学校</li>
+                            <li data-name="休闲娱乐">休闲娱乐</li>
+                            <li data-name="公园">公园</li>
+                        </ul>
+                        <div class="facility-list-box">
+                            <div id="facility-type" class="facility-type">公交</div>
+                            <ul id="facility-list" class="facility-list">
+
+                            </ul>
+                        </div>
+                        <div id="facility" class="facility">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="model">
+                    <div class="model-content">
+                        <span id="btn-model-close" class="iconfont icon-close btn-model-close"></span>
+                        <div id="model-content" >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="../../static/js/houseinfo.js"></script>
+</body>
+
+</html>

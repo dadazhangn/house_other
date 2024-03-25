@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>房屋数据分析推荐系统</title>
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/index.css" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+
+</head>
+
+<body>
+    <div class="warpper">
+        <header>
+            <div class="left">
+                <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统" />
+                <span>房屋数据分析推荐系统</span>
+            </div>
+            <div class="right">
+                <span class="head-login">登录</span>
+                <span class="head-register">注册</span>
+            </div>
+        </header>
+
+        <section>
+            <nav>
+                <dl>
+<!--                    <dt>房屋数据分析推荐系统</dt>-->
+                    <dd data-id="data-counter" class="active">数据可视化</dd>
+                    <dd data-id="data-query" class="query_nav_box">
+                        楼盘房屋数据
+                        <div class="query_nav_container">
+                            <span data-id="query_simple">楼盘房屋数据</span>
+<!--                            <span data-id="query_condition">条件查询</span>-->
+<!--                            <span data-id="query_public">公共设施查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-analysis" class="analysis_nav_box">
+                        区位资源
+                        <div class="analysis_nav_container">
+                            <span data-id="analysis-resources">区位资源分析</span>
+<!--                            <span data-id="analysis-recommendation">区位资源查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-compare">房源对比</dd>
+                    <dd data-id="data-tuijian">房源推荐</dd>
+                    <dd data-id="data-user">个人信息&后台管理</dd>
+
+                </dl>
+            </nav>
+<!--               <dt><a href="http://127.0.0.1:8000/admin/">后台数据管理</a></dt>-->
+<!--                <dl> <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">后台数据管理</a></dl>-->
+
+
+
+            <div class="content">
+                <!-- 2. 数据台账 -->
+                <div id="data-counter">
+                    <div class="content">
+                        <div id="counter-1"></div>
+                        <div id="counter-2"></div>
+                        <div id="counter-3"></div>
+                        <div id="counter-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript"
+    src="http://api.map.baidu.com/api?v=3.0&ak=FLf5ptGOGyaoR22zVAOmTdOvxCjUhkGS"></script>
+    <script src="../../static/js/index.js"></script>
+</body>
+
+</html>

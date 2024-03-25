@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>房屋数据分析推荐系统</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/query_simple.css" />
+    <link rel="shortcut icon" href="../../static/images/logo.png" type="image/x-icon" />
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=3.0&ak=FLf5ptGOGyaoR22zVAOmTdOvxCjUhkGS"></script>
+{#    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>#}
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper">
+        <header>
+            <div class="left">
+                <img src="../../static/images/logo.png" alt="房屋数据分析推荐系统" />
+                <span>房屋数据分析推荐系统</span>
+            </div>
+            <div class="right">
+                <span class="head-login">登录</span>
+                <span class="head-register">注册</span>
+            </div>
+        </header>
+        <section>
+            <nav>
+                <dl>
+
+                    <dd data-id="data-counter">数据可视化</dd>
+                    <dd data-id="data-query" class="query_nav_box active">
+                        楼盘房屋数据
+                        <div class="query_nav_container">
+                            <span data-id="query_simple">楼盘房屋数据</span>
+<!--                            <span data-id="query_condition">条件查询</span>-->
+<!--                            <span data-id="query_public">公共设施查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-analysis" class="analysis_nav_box">
+                        区位资源
+                        <div class="analysis_nav_container">
+                            <span data-id="analysis-resources">区位资源分析</span>
+<!--                            <span data-id="analysis-recommendation">区位资源查询</span>-->
+                        </div>
+                    </dd>
+                    <dd data-id="data-compare">房源对比</dd>
+                    <dd data-id="data-tuijian">房源推荐</dd>
+                    <dd data-id="data-user">个人信息&后台管理</dd>
+                </dl>
+            </nav>
+
+            <div class="content">
+                <!-- 3. 查询统计 -->
+                <div id="query_simple">
+                    <div class="find-top">
+                        <span>楼盘房屋数据</span>
+                        <div>
+                            <input class="find-input" type="text" value="" placeholder="请输入小区名称" />
+                            <button class="find-btn">查询</button>
+                        </div>
+                    </div>
+                    <table border="1px solid #ececec" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>小区图片</th>
+                                <th>小区名称</th>
+                                <th>地址</th>
+                                <th>价格</th>
+                                <th>详情</th>
+                                <th>是否在售</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="simple-list">
+                        </tbody>
+                    </table>
+                    <div class="pager">
+                        <span class="prev-btn" data-prev="prev">上一页</span>
+                        <ul>
+                            <li data-num="1" class="active">1</li>
+                            <li data-num="2">2</li>
+                            <li data-num="3">3</li>
+                            <li data-num="4">4</li>
+                            <li data-num="5">5</li>
+                        </ul>
+                        <span class="next-btn" data-next="next">下一页</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="../../static/js/query_simple.js"></script>
+</body>
+
+</html>

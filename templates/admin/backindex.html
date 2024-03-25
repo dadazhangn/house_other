@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/backindex.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>用户管理界面</title>
+</head>
+
+<body>
+<header>
+    <span>购房选址用户管理</span>
+    <div>
+        <span> <a href="/index">进入首页</a></span>
+        <span class="super-user">用户</span>
+    </div>
+</header>
+<section>
+    <table border="1px solid #ececec" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>账号</th>
+            <th>密码</th>
+            <th>手机号</th>
+            <th>最小年龄</th>
+            <th>最大年龄</th>
+            <th>文化程度</th>
+            <th>最小存款</th>
+            <th>最大存款</th>
+            <th>用户类型</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</section>
+<script>
+    let allUserInfo = [];
+    $.ajax({
+        url: "/show_user",
+        type: "get",
+        dataType: "json",
+    }).success(function (data) {
+        allUserInfo = data.all_user;
+        render(allUserInfo);
+    })
+
+    function render(allUserInfo) {
+        if (typeof allUserInfo !== "array") {
+            let strHtml = "";
+            allUserInfo.forEach((user,index) => {
+                strHtml += `
+                    <tr>
+                        <th>${index+1}</th>
+                        <th>${user.username}</th>
+                        <th>${user.password}</th>
+                        <th>${user.phone_num}</th>
+                        <th>${user.min_age}</th>
+                        <th>${user.max_age}</th>
+                        <th>${user.education_background}</th>
+                        <th>${user.min_estate}</th>
+                        <th>${user.max_estate}</th>
+                        <th>${user.user_type}</th>
+                        <th><button data-id="${user.id}" data-type="${user.user_type}">删除</button></th>
+                    </tr>`;
+            });
+            document.querySelector("table tbody").innerHTML = strHtml;
+            document.querySelector("table tbody").onclick = function (e) {
+                let dom = e.target;
+                if (dom.tagName !== "BUTTON") {
+                    return;
+                }
+                console.log(dom.dataset.type , 1)
+                if (dom.dataset.type === "管理员"){
+                    alert("管理员用户不能删除！！！")
+                    return;
+                }
+                $.ajax({
+                    url: "/delete_user",
+                    data: {"user_id": +dom.dataset.id},
+                    type: "post",
+                    dataType: "json",
+                }).success(function (data) {
+                    if (data.res === 1) {
+                        alert("删除成功！");
+                        location.reload();
+                    }
+                })
+            }
+
+        }
+
+    }
+
+
+    function checkIsUser() {
+        let cookieObj = [];
+        document.cookie.split("; ").forEach(item => {
+            cookieObj.push(item.split("="));
+        })
+        let isLogin = cookieObj.find(item => {
+            return item[0] === "username";
+        })
+
+        if (isLogin) {
+            document.querySelector("header span.super-user").innerText = `用户:${isLogin[1]}`;
+            return;
+        }
+    }
+
+    checkIsUser();
+</script>
+</body>
+
+</html>

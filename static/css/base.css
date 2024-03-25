@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+font {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body,
+.warpper {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    padding: 5px 10px;
+    outline: none;
+}
+
+
+/* 头部 */
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #354457;
+    line-height: 50px;
+    box-shadow: 0px 5px 10px #4c4c4c;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .left {
+    margin-left: 20px;
+}
+
+header .right {
+    margin-right: 100px;
+    color: #ECECEC;
+}
+
+header .right span {
+    cursor: pointer;
+    margin-right: 10px;
+    user-select: none;
+}
+
+header .left img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+header .left span {
+    color: #b3bcc5;
+    font-size: 14px;
+}
+
+
+/* 中间 */
+
+section {
+    width: 100%;
+    overflow: hidden;
+    height: calc(100% - 50px);
+}
+
+section > .content {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+}
+
+section > .content::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "正在加载。。。";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 2rem;
+    color: #fff;
+    z-index: 100;
+}
+
+/* nav */
+
+section nav {
+    float: left;
+    width: 200px;
+    overflow: hidden;
+    /* height: 100%; */
+    height: 10000px;
+    margin-bottom: -9990px;
+    background-color: #4d5e70;
+    box-shadow: 3px 0px 10px #4c4c4c;
+}
+
+section nav dt,
+dd {
+    height: 40px;
+    line-height: 40px;
+    color: #b3bcc5;
+    font-size: 14px;
+}
+
+section nav dt {
+    padding-left: 20px;
+}
+
+section nav dd {
+    padding-left: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+section nav dd.active {
+    background-color: #ddd;
+    color: #354457;
+}
+
+section nav dd:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #354457;
+}
+
+
+/* 查询下拉nav */
+
+
+.query_nav_box, .analysis_nav_box {
+    position: relative;
+}
+
+.query_nav_container, .analysis_nav_container {
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    background: #2b2b2b;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.query_nav_container span, .analysis_nav_container span {
+    width: 100%;
+    padding-left: 5%;
+    color: #b3bcc5;
+    user-select: none;
+    padding-left: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.query_nav_container span.query_active,
+.analysis_nav_container span.analysis_active {
+    background-color: #ddd;
+    color: #354457;
+}
