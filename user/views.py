@@ -63,6 +63,7 @@ def login_check(request):
         response.set_cookie("islogin",True)
         response.set_cookie("user_id",user_[0].id)
         response.set_cookie("username",username)
+        response.set_cookie()
         return response
     else :
         return JsonResponse({'res':0})

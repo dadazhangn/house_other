@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'data_count',  #数据帐台注册
-    'corsheaders',
+    # 'corsheaders',
     'loupan_select', #楼盘筛选
     'region_resource', #区位资源
     'compare', #楼盘对比
@@ -85,9 +85,9 @@ MIDDLEWARE = [
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
-# CORS_ORIGIN_WHITELIST = (
-#     '*'
-# )
+CORS_ORIGIN_WHITELIST = (
+    '*'
+)
 
 
 CORS_ALLOW_METHODS = (

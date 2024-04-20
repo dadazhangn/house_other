@@ -378,7 +378,8 @@ function init() {
                                 <div class="img-box">
 
 <!--                                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2680422136,3870612526&fm=26&gp=0.jpg">-->
-                                        <img src="../../static/picture.png">
+                                    <img src="\thttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_lZBB8BoynfC3lIoQllgOXtV2WkXawfyZcBuGu0RNHQ&s">
+<!--                                        <img src="../../static/picture.png">-->
                                 </div>
                                 <div class="comment-name">${comment.username}</div>
                             </div>
